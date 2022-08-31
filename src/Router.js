@@ -22,7 +22,7 @@ const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/rayong/Login" element={<LoginRa />} />
+        <Route path="/" element={<LoginRa />} />
         <Route path="/rayong/Main" element={<MainRa />} />
         <Route path="/JongHwaSung/Login" element={<LoginSung />} />
         <Route path="/JongHwaSung/Main" element={<MainSung />} />
