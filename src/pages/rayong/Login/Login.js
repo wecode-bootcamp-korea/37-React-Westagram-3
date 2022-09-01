@@ -4,20 +4,19 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
 function LoginRa() {
-  const navigate = useNavigate();
-  const goToMain = () => {
-    navigate('/rayong/Main');
-  };
-
   const [userId, setUserId] = useState('');
   const [userPW, setUserPW] = useState('');
 
-  const saveUserId = event => {
-    setUserId(event.target.value);
-  };
+  const saveUserId = event => setUserId(event.target.value);
+  const saveUserPw = event => setUserPW(event.target.value);
 
-  const saveUserPw = event => {
-    setUserPW(event.target.value);
+  const isValidId = userId.includes('@') ? true : false;
+  const isValidPw = userPW.length >= 5 ? true : false;
+  const isAllValid = isValidId && isValidPw;
+
+  const navigate = useNavigate();
+  const goToMain = () => {
+    navigate('/rayong/Main');
   };
 
   return (
@@ -42,7 +41,7 @@ function LoginRa() {
             />
           </div>
           <div className="btn-box">
-            <button id="loginBtn" onClick={goToMain}>
+            <button id="loginBtn" onClick={goToMain} disabled={!isAllValid}>
               로그인
             </button>
           </div>
