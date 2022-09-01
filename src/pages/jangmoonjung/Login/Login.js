@@ -16,6 +16,15 @@ function LoginJang() {
   const [btnDisable, setBtnDisable] = useState(true);
   const [isActive, setIsActive] = useState(false);
   const navigate = useNavigate();
+  const validationTest = () => {
+    if (idValue.includes('@') && pwValue.length > 5) {
+      setIsActive(true);
+      setBtnDisable(false);
+    } else {
+      setIsActive(false);
+      setBtnDisable(true);
+    }
+  };
   const goToMain = () => {
     if (!btnDisable) {
       navigate('/jangmoonjung/Main');
@@ -30,13 +39,7 @@ function LoginJang() {
           <input
             onChange={e => {
               saveUserId(e);
-              if (idValue.includes('@') && pwValue.length > 5) {
-                setIsActive(true);
-                setBtnDisable(false);
-              } else {
-                setIsActive(false);
-                setBtnDisable(true);
-              }
+              validationTest();
             }}
             className="id"
             type="text"
@@ -45,13 +48,7 @@ function LoginJang() {
           <input
             onChange={e => {
               saveUserPw(e);
-              if (idValue.includes('@') && pwValue.length > 5) {
-                setIsActive(true);
-                setBtnDisable(false);
-              } else {
-                setIsActive(false);
-                setBtnDisable(true);
-              }
+              validationTest();
             }}
             className="pw"
             type="password"
