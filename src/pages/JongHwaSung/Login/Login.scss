@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+}
+
+main {
+  width: 550px;
+  height: 600px;
+  border: 2px solid lightgray;
+  text-align: center;
+  margin: auto;
+  margin-top: 100px;
+}
+
+.mainLogo {
+  font-size: 40px;
+  font-family: 'Lobster', cursive;
+}
+
+.links {
+  padding-top: 110px;
+  color: royalblue;
+}
+
+input {
+  width: 400px;
+  height: 50px;
+  border-radius: 5px;
+  margin-top: 10px;
+  border: 1px solid lightgrey;
+  padding-left: 10px;
+}
+
+.loginBtn {
+  width: 400px;
+  height: 40px;
+  margin-top: 15px;
+  border-radius: 5px;
+  border: none;
+  background-color: blue;
+  color: white;
+  font-weight: bolder;
+  font-size: large;
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.3;
+  }
+}
