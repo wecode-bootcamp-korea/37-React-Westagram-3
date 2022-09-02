@@ -1,11 +1,12 @@
 import React from 'react';
 
-function ReplyLists({ reply }) {
+function ReplyLists(props) {
+  const { content } = props;
   return (
     <div className="texts__reply">
       <div className="texts__reply__left">
         <div className="id">wecode_bootcamp</div>
-        <div className="text">{reply}</div>
+        <div className="text">{content}</div>
       </div>
       <div className="texts__reply__right">
         <i className="texts__heart fa-regular fa-heart" />
