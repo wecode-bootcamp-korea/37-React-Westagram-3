@@ -218,12 +218,15 @@
         }
 
         p {
-          color: #888;
+          color: #999;
           font-size: 14px;
+          line-height: 1.2;
+          font-weight: 400;
         }
 
         .box strong {
-          color: #111;
+          color: #333;
+          font-weight: bold;
         }
       }
 
@@ -291,9 +294,9 @@
       .right-subtext,
       .right-cc {
         color: #aaa;
-        font-size: 14px;
-        font-weight: 600;
-        line-height: 1.4;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 1.5;
       }
 
       .right-subtext {
