@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ReplyLists from './components/ReplyLists';
 import './Main.scss';
 
 function MainJang() {
@@ -10,26 +11,24 @@ function MainJang() {
     setReplyValue(event.target.value);
   };
   const replyValidation = () => {
-    if (replyValue.length === 0) {
-      setReplyActive(false);
-      setReplyDisable(true);
-    } else {
+    if (replyValue.trim().length > 0) {
       setReplyActive(true);
       setReplyDisable(false);
+    } else {
+      setReplyActive(false);
+      setReplyDisable(true);
     }
   };
-
   const replyRegist = event => {
     // 다른 이벤트가 발생하지 않도록
     event.preventDefault();
-    if (replyValue.length === 0) {
+    // 빈 글일 때는 버튼 비활성화
+    if (replyValue.trim().length === 0) {
       setReplyActive(false);
       setReplyDisable(true);
       return;
     } else {
-      let copy = [...replyArray];
-      copy.push(replyValue);
-      setReplyArray(copy);
+      setReplyArray([...replyArray, replyValue]);
       setReplyValue('');
     }
   };
@@ -152,18 +151,7 @@ function MainJang() {
                     </div>
                   </div>
                   {replyArray.map((value, index) => {
-                    return (
-                      <div key={index} className="texts__reply">
-                        <div className="texts__reply__left">
-                          <div className="id">wecode_bootcamp</div>
-                          <div className="text">{value}</div>
-                        </div>
-                        <div className="texts__reply__right">
-                          <i className="texts__heart fa-regular fa-heart" />
-                          <i className="texts__remove fa-regular fa-trash-can" />
-                        </div>
-                      </div>
-                    );
+                    return <ReplyLists key={index} content={value} />;
                   })}
                 </div>
                 <div className="time">
