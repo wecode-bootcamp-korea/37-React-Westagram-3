@@ -1,7 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../Main/Main.scss';
 
 function MainRa() {
+  const [commentsValue, setCommentsValue] = useState('');
+  const [commentsArr, setCommentsArr] = useState([]);
+
+  const saveComments = event => {
+    setCommentsValue(event.target.value);
+  };
+
+  const makeCommentsArr = event => {
+    event.preventDefault();
+    setCommentsArr(cur => [...cur, commentsValue]);
+    setCommentsValue('');
+  };
+
+  function AddComments() {
+    let commentsList = commentsArr.map((Comments, index) => {
+      return (
+        <li key={Comments.id}>
+          <span>
+            <strong>wecode</strong>
+            {Comments}
+          </span>
+          <div>
+            <i className="fa-solid fa-heart" />
+            <i className="fa-regular fa-circle-xmark" />
+          </div>
+        </li>
+      );
+    });
+    return commentsList;
+  }
+
   return (
     <div className="main">
       <nav className="header">
@@ -69,9 +100,16 @@ function MainRa() {
                     </p>
                   </div>
                 </div>
-                <ul id="feedsList" className="feeds-list" />
-                <form id="feedsForm" className="feeds-input">
+                <ul id="feedsList" className="feeds-list">
+                  <AddComments />
+                </ul>
+                <form
+                  onSubmit={makeCommentsArr}
+                  id="feedsForm"
+                  className="feeds-input"
+                >
                   <input
+                    onChange={saveComments}
                     id="feedsInput"
                     type="text"
                     placeholder="댓글 달기.."
