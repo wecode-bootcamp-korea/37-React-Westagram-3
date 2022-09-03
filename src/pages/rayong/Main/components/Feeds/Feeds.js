@@ -59,7 +59,7 @@ function Feeds(props) {
         </div>
         <ul id="feedsList" className="feeds-list">
           {commentsArr.map((value, index) => (
-            <Comments item={value} key={index} />
+            <Comments value={value} key={value.code} />
           ))}
         </ul>
         <form onSubmit={makeCommentsArr} id="feedsForm" className="feeds-input">

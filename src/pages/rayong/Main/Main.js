@@ -1,12 +1,12 @@
 import React from 'react';
 import '../Main/Main.scss';
-import Header from './components/Header/Header';
+import Nav from './components/Nav/Nav';
 import Feeds from './components/Feeds/Feeds';
 
 function MainRa() {
   return (
     <div className="main">
-      <Header />
+      <Nav />
       <main className="contents">
         <div className="wrapper">
           <div className="contents-box">
@@ -28,7 +28,7 @@ function MainRa() {
               </div>
               <div className="right-story">
                 <div className="box">
-                  <div className="right-story-top">
+                  <div className="top">
                     <p>스토리</p>
                     <p>
                       <strong>모두 보기</strong>
@@ -37,7 +37,7 @@ function MainRa() {
                   <ul className="list">
                     <li>
                       <img
-                        className="right-story-img"
+                        className="profile"
                         src="https://velog.velcdn.com/images/rayong/profile/df592861-ea43-432c-aea2-a1f79730300b/image.png"
                         alt=""
                       />
@@ -49,7 +49,7 @@ function MainRa() {
                     </li>
                     <li>
                       <img
-                        className="right-story-img"
+                        className="profile"
                         src="https://velog.velcdn.com/images/rayong/profile/df592861-ea43-432c-aea2-a1f79730300b/image.png"
                         alt=""
                       />
@@ -61,7 +61,7 @@ function MainRa() {
                     </li>
                     <li>
                       <img
-                        className="right-story-img"
+                        className="profile"
                         src="https://velog.velcdn.com/images/rayong/profile/df592861-ea43-432c-aea2-a1f79730300b/image.png"
                         alt=""
                       />
@@ -76,7 +76,7 @@ function MainRa() {
               </div>
               <div className="right-suggest">
                 <div className="box">
-                  <div className="right-suggest-top">
+                  <div className="top">
                     <p>회원님을 위한 추천</p>
                     <p>
                       <strong>모두 보기</strong>
@@ -86,7 +86,7 @@ function MainRa() {
                     <li>
                       <div>
                         <img
-                          className="right-suggest-img"
+                          className="profile"
                           src="https://velog.velcdn.com/images/rayong/profile/df592861-ea43-432c-aea2-a1f79730300b/image.png"
                           alt=""
                         />
@@ -101,7 +101,7 @@ function MainRa() {
                     <li>
                       <div>
                         <img
-                          className="right-suggest-img"
+                          className="profile"
                           src="https://velog.velcdn.com/images/rayong/profile/df592861-ea43-432c-aea2-a1f79730300b/image.png"
                           alt=""
                         />
@@ -116,7 +116,7 @@ function MainRa() {
                     <li>
                       <div>
                         <img
-                          className="right-suggest-img"
+                          className="profile"
                           src="https://velog.velcdn.com/images/rayong/profile/df592861-ea43-432c-aea2-a1f79730300b/image.png"
                           alt=""
                         />

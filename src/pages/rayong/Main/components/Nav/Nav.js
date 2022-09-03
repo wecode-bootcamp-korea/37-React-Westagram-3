@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Header(props) {
+function Nav(props) {
   return (
     <nav className="header">
       <div className="wrapper">
@@ -28,4 +28,4 @@ function Header(props) {
   );
 }
 
-export default Header;
+export default Nav;

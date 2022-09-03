@@ -230,65 +230,82 @@
         }
       }
 
-      .right-story,
+      .right-story {
+        margin-bottom: 20px;
+        padding: 15px 10px 10px;
+        border-radius: 4px;
+        background-color: white;
+
+        .top {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 15px;
+        }
+
+        .profile {
+          width: 30px;
+          height: 30px;
+          margin-right: 10px;
+          border-radius: 50%;
+        }
+
+        li {
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+        }
+
+        p {
+          color: gray;
+          font-size: 13px;
+          line-height: 1.2;
+        }
+
+        p strong {
+          color: #333;
+        }
+      }
+
       .right-suggest {
         margin-bottom: 20px;
         padding: 15px 10px 10px;
         border-radius: 4px;
         background-color: white;
-      }
 
-      .right-story-top,
-      .right-suggest-top {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 15px;
-      }
+        .top {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 15px;
+        }
 
-      .right-story-img,
-      .right-suggest-img {
-        width: 30px;
-        height: 30px;
-        margin-right: 10px;
-        border-radius: 50%;
-      }
+        .profile {
+          width: 30px;
+          height: 30px;
+          margin-right: 10px;
+          border-radius: 50%;
+        }
 
-      .right-story li {
-        display: flex;
-        align-items: center;
-        margin-bottom: 10px;
-      }
+        p {
+          color: gray;
+          font-size: 13px;
+          line-height: 1.2;
+        }
 
-      .right-story p {
-        color: gray;
-        font-size: 13px;
-        line-height: 1.2;
-      }
+        p strong {
+          color: #333;
+        }
 
-      .right-story p strong {
-        color: #333;
-      }
+        .list li {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 10px;
+        }
 
-      .right-suggest p {
-        color: gray;
-        font-size: 13px;
-        line-height: 1.2;
-      }
-
-      .right-suggest p strong {
-        color: #333;
-      }
-
-      .right-suggest .list li {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 10px;
-      }
-
-      .right-suggest .list div {
-        display: flex;
-        align-items: center;
+        .list div {
+          display: flex;
+          align-items: center;
+        }
       }
 
       .right-subtext,

@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Comments({ item }) {
+function Comments({ value, key }) {
   return (
-    <li>
+    <li key={key}>
       <span>
         <strong>wecode</strong>
-        {item}
+        {value}
       </span>
       <div>
         <i className="fa-solid fa-heart" />
