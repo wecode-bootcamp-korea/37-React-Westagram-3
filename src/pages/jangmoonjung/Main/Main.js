@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Nav from '../../../components/Nav/Nav';
 import ReplyLists from './components/ReplyLists';
+import { FOOTER_LIST } from '../Main/components/FooterList';
 import './Main.scss';
 
 function MainJang() {
@@ -266,10 +267,9 @@ function MainJang() {
             </div>
             <footer className="footer">
               <div className="menu">
-                <span>소개</span> · <span>도움말</span> · <span>홍보 센터</span>{' '}
-                · <span>API</span> · <span>채용 정보</span> ·
-                <span>개인정보처리방침</span> · <span>약관</span> ·
-                <span>위치</span> · <span>언어</span>
+                {FOOTER_LIST.map(footerList => {
+                  return <span key={footerList.id}>{footerList.text}</span>;
+                })}
               </div>
               <div className="copyright">© 2022 INSTAGRAM FROM META</div>
             </footer>
