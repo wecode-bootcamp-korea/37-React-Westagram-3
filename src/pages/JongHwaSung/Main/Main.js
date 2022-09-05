@@ -123,7 +123,7 @@ function MainSung() {
                 <Comment Props={e} key={index} />
               ))}
 
-              <div className="nameList"></div>
+              <div className="nameList" />
               <form className="comment_form" onSubmit={commentSubmit}>
                 <input
                   type="text"
@@ -290,7 +290,7 @@ function MainSung() {
                 </div>
               </div>
             </div>
-            <p></p>
+            <p />
             <span className="gray">
               Instargram 정보ㆍ지원ㆍ홍보 센터ㆍAPIㆍ채용
               정보ㆍ개인정보처리방침ㆍ양관ㆍ디렉터리ㆍ프로필ㆍ해시태그ㆍ언어
@@ -303,13 +303,13 @@ function MainSung() {
 
       <div className="dd">
         <div className="profileMenu">
-          <i className="fa-solid fa-user"></i> 프로필
+          <i className="fa-solid fa-user" /> 프로필
         </div>
         <div className="profileMenu">
-          <i className="fa-regular fa-bookmark"></i> 저장됨
+          <i className="fa-regular fa-bookmark" /> 저장됨
         </div>
         <div className="profileMenu">
-          <i className="fa-solid fa-gear"></i> 설정
+          <i className="fa-solid fa-gear" /> 설정
         </div>
         <div className="profileMenu">로그아웃</div>
       </div>
