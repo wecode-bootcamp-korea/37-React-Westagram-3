@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import './Main.scss';
-import '../../../styles/reset.scss';
+// import "../styles/reset.scss"
+import { Link } from 'react-router-dom';
 
-import Comment from '../Comment';
+import Comment from '../../components/Comment';
 
-function MainSung() {
+function Main() {
   const [comment, setComment] = useState('');
   const [comments, setComments] = useState([]);
 
@@ -22,11 +23,7 @@ function MainSung() {
     <React.Fragment>
       <nav>
         <div className="navLeft">
-          <img
-            src="/images/sungjonghwa/instagram.png"
-            className="instargram"
-            alt=""
-          />
+          <img src="images/instagram.png" className="instargram" alt="" />
           <span className="fontBolder">|</span>
           <span className="logo">Westagram</span>
         </div>
@@ -46,11 +43,7 @@ function MainSung() {
             src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png"
             alt=""
           />
-          <img
-            src="/images/sungjonghwa/profile.jpg"
-            className="profileImage"
-            alt=""
-          />
+          <img src="images/profile.jpg" className="profileImage" alt="" />
         </div>
       </nav>
       <div id="wrap">
@@ -58,19 +51,11 @@ function MainSung() {
           <div className="feeds">
             <article>
               <div className="articleHead">
-                <img
-                  src="images/sungjonghwa/Octocat.jpg"
-                  className="dog"
-                  alt=""
-                />
+                <img src="images/Octocat.jpg" className="dog" alt="" />
                 <span className="fontBolder">sungjonghwa</span>
               </div>
 
-              <img
-                src="/images/sungjonghwa/myimage.jpg"
-                className="myimage"
-                alt=""
-              />
+              <img src="images/myimage.jpg" className="myimage" alt="" />
 
               <div className="fontawsome">
                 {/* <!-- <i class="fa-regular fa-heart"></i>
@@ -78,34 +63,26 @@ function MainSung() {
                     <i class="fa-solid fa-arrow-up-from-bracket"></i>
                     <i class="fa-regular fa-bookmark"></i> --> */}
 
+                <img src="images/heart-regular.svg" className="heart" alt="" />
                 <img
-                  src="/images/sungjonghwa/heart-regular.svg"
-                  className="heart"
-                  alt=""
-                />
-                <img
-                  src="/images/sungjonghwa/comment-regular.svg"
+                  src="images/comment-regular.svg"
                   className="comment"
                   alt=""
                 />
                 <img
-                  src="/images/sungjonghwa/arrow-up-from-bracket-solid.svg"
+                  src="images/arrow-up-from-bracket-solid.svg"
                   className="arrow"
                   alt=""
                 />
                 <img
-                  src="/images/sungjonghwa/bookmark-regular.svg"
+                  src="images/bookmark-regular.svg"
                   className="bookmaker"
                   alt=""
                 />
               </div>
 
               <p>
-                <img
-                  src="/images/sungjonghwa/Octocat.jpg"
-                  className="feedLike"
-                  alt=""
-                />
+                <img src="images/Octocat.jpg" className="feedLike" alt="" />
                 <span className="fontBolder">aineworl</span>님{' '}
                 <span className="fontBolder">외 10명</span>이 좋아합니다.
               </p>
@@ -123,7 +100,6 @@ function MainSung() {
                 <Comment Props={e} key={index} />
               ))}
 
-              <div className="nameList" />
               <form className="comment_form" onSubmit={commentSubmit}>
                 <input
                   type="text"
@@ -139,11 +115,7 @@ function MainSung() {
 
           <div className="main-right">
             <div className="rightHeader">
-              <img
-                src="/images/sungjonghwa/Octocat.jpg"
-                className="githubImage"
-                alt=""
-              />
+              <img src="images/Octocat.jpg" className="githubImage" alt="" />
               <div>
                 <span>
                   Git&Github
@@ -153,7 +125,7 @@ function MainSung() {
               </div>
             </div>
 
-            <div className="stroy">
+            <div className="story">
               <div className="storyHeader">
                 <span>스토리</span>
                 <span className="fontBolder">모두보기</span>
@@ -162,7 +134,7 @@ function MainSung() {
               <div className="content">
                 <div className="flex">
                   <img
-                    src="/images/sungjonghwa/blackImage.jpeg"
+                    src="images/blackImage.jpeg"
                     className="blackImage"
                     alt=""
                   />
@@ -175,7 +147,7 @@ function MainSung() {
 
                 <div className="flex">
                   <img
-                    src="/images/sungjonghwa/blackImage.jpeg"
+                    src="images/blackImage.jpeg"
                     className="blackImage"
                     alt=""
                   />
@@ -188,7 +160,7 @@ function MainSung() {
 
                 <div className="flex">
                   <img
-                    src="/images/sungjonghwa/blackImage.jpeg"
+                    src="images/blackImage.jpeg"
                     className="blackImage"
                     alt=""
                   />
@@ -201,7 +173,7 @@ function MainSung() {
 
                 <div className="flex">
                   <img
-                    src="/images/sungjonghwa/blackImage.jpeg"
+                    src="images/blackImage.jpeg"
                     className="blackImage"
                     alt=""
                   />
@@ -214,7 +186,7 @@ function MainSung() {
 
                 <div className="flex">
                   <img
-                    src="/images/sungjonghwa/blackImage.jpeg"
+                    src="images/blackImage.jpeg"
                     className="blackImage"
                     alt=""
                   />
@@ -227,7 +199,7 @@ function MainSung() {
 
                 <div className="flex">
                   <img
-                    src="/images/sungjonghwa/blackImage.jpeg"
+                    src="images/blackImage.jpeg"
                     className="blackImage"
                     alt=""
                   />
@@ -249,7 +221,7 @@ function MainSung() {
               <div className="content">
                 <div className="flex">
                   <img
-                    src="/images/sungjonghwa/blackImage.jpeg"
+                    src="images/blackImage.jpeg"
                     className="blackImage"
                     alt=""
                   />
@@ -263,7 +235,7 @@ function MainSung() {
 
                 <div className="flex">
                   <img
-                    src="/images/sungjonghwa/blackImage.jpeg"
+                    src="images/blackImage.jpeg"
                     className="blackImage"
                     alt=""
                   />
@@ -277,7 +249,7 @@ function MainSung() {
 
                 <div className="flex">
                   <img
-                    src="/images/sungjonghwa/blackImage.jpeg"
+                    src="images/blackImage.jpeg"
                     className="blackImage"
                     alt=""
                   />
@@ -292,8 +264,16 @@ function MainSung() {
             </div>
             <p />
             <span className="gray">
-              Instargram 정보ㆍ지원ㆍ홍보 센터ㆍAPIㆍ채용
-              정보ㆍ개인정보처리방침ㆍ양관ㆍ디렉터리ㆍ프로필ㆍ해시태그ㆍ언어
+              <Link to="#/"> Instargram 정보ㆍ</Link>
+              <Link to="#/">지원ㆍ</Link>
+              <Link to="#/">홍보 센터ㆍ</Link>
+              <Link to="#/">APIㆍ</Link>
+              <Link to="#/">채용 정보ㆍ</Link>
+              <Link to="#/">개인정보처리방침ㆍ</Link>
+              <Link to="#/">양관ㆍ</Link>
+              <Link to="#/">디렉터리ㆍ</Link>
+              <Link to="#/">프로필ㆍ</Link>
+              <Link to="#/">언어</Link>
             </span>
             <br />
             <span className="gray">@ 2022 Instargram</span>
@@ -301,20 +281,20 @@ function MainSung() {
         </section>
       </div>
 
-      <div className="dd">
+      {/* <div className="dd">
         <div className="profileMenu">
-          <i className="fa-solid fa-user" /> 프로필
+          <i className="fa-solid fa-user"></i> 프로필
         </div>
         <div className="profileMenu">
-          <i className="fa-regular fa-bookmark" /> 저장됨
+          <i className="fa-regular fa-bookmark"></i> 저장됨
         </div>
         <div className="profileMenu">
-          <i className="fa-solid fa-gear" /> 설정
+          <i className="fa-solid fa-gear"></i> 설정
         </div>
         <div className="profileMenu">로그아웃</div>
-      </div>
+      </div> */}
     </React.Fragment>
   );
 }
 
-export default MainSung;
+export default Main;
