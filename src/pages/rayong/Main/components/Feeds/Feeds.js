@@ -3,8 +3,8 @@ import FeedsProfile from './components/FeedsProfile';
 import FeedsImg from './components/FeedsImg';
 import FeedsIcon from './components/FeedsIcon';
 import FeedsLikes from './components/FeedsLikes';
-import FeedsForm from './components/FeedsForm';
 import FeedsList from './components/FeedsList';
+import FeedsForm from './components/FeedsForm';
 
 function Feeds(props) {
   const [commentsValue, setCommentsValue] = useState('');

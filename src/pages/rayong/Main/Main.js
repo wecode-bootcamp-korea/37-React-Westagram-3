@@ -1,8 +1,8 @@
 import React from 'react';
-import '../Main/Main.scss';
+import Nav from '../../../components/Nav/Nav';
 import Feeds from './components/Feeds/Feeds';
 import MainRight from './components/MainRight/MainRight';
-import Nav from '../../../components/Nav/Nav';
+import '../Main/Main.scss';
 
 function MainRa() {
   return (

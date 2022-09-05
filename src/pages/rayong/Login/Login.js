@@ -1,7 +1,6 @@
-import React from 'react';
-import '../Login/Login.scss';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import '../Login/Login.scss';
 
 function LoginRa() {
   const [userId, setUserId] = useState('');
