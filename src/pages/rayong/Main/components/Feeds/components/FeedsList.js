@@ -1,10 +1,15 @@
 import React from 'react';
 
-function FeedsList({ commentsArr, toggleLikeIcon, isClicked }) {
+function FeedsList({
+  commentsArr,
+  toggleLikeIcon,
+  isClicked,
+  deleteCommentsIcon,
+}) {
   return (
     <ul id="feedsList" className="feeds-list">
       {commentsArr.map((value, index) => (
-        <li key={value.id}>
+        <li key={index}>
           <span>
             <strong>wecode</strong>
             {value}
@@ -15,7 +20,10 @@ function FeedsList({ commentsArr, toggleLikeIcon, isClicked }) {
               className="fa-solid fa-heart"
               style={{ color: isClicked ? 'red' : 'black' }}
             />
-            <i className="fa-regular fa-circle-xmark" />
+            <i
+              onClick={deleteCommentsIcon}
+              className="fa-regular fa-circle-xmark"
+            />
           </div>
         </li>
       ))}

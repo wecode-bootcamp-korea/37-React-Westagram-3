@@ -29,6 +29,10 @@ function Feeds(props) {
     setIsClicked(!isClicked);
   };
 
+  const deleteCommentsIcon = event => {
+    event.target.parentElement.parentElement.remove();
+  };
+
   return (
     <div className="feeds">
       <article className="feeds-box">
@@ -40,6 +44,7 @@ function Feeds(props) {
           commentsArr={commentsArr}
           toggleLikeIcon={toggleLikeIcon}
           isClicked={isClicked}
+          deleteCommentsIcon={deleteCommentsIcon}
         />
         <FeedsForm
           makeCommentsArr={makeCommentsArr}
