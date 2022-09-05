@@ -14,19 +14,16 @@ function Feeds(props) {
     setCommentsValue(event.target.value);
   };
 
-  const commentsValid = commentsValue.trim().length > 0;
-
   const makeCommentsArr = event => {
     event.preventDefault();
-    return commentsValid
-      ? (setCommentsArr([...commentsArr, commentsValue]), setCommentsValue(''))
-      : setCommentsArr(commentsArr);
+    if (commentsValue.trim().length > 0) {
+      setCommentsArr([...commentsArr, commentsValue]);
+      setCommentsValue('');
+    }
   };
 
-  const [isClicked, setIsClicked] = useState(false);
-
-  const toggleLikeIcon = event => {
-    setIsClicked(!isClicked);
+  const toggleLikeIcon = e => {
+    e.target.classList.toggle('icon-red');
   };
 
   const deleteCommentsIcon = event => {
@@ -43,7 +40,6 @@ function Feeds(props) {
         <FeedsList
           commentsArr={commentsArr}
           toggleLikeIcon={toggleLikeIcon}
-          isClicked={isClicked}
           deleteCommentsIcon={deleteCommentsIcon}
         />
         <FeedsForm
