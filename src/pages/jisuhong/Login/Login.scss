@@ -1,0 +1,110 @@
+body {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+
+  .box {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 450px;
+    height: 496px;
+    border: 1px solid #dbdbdb;
+    margin: 0px 0px 10px;
+    padding: 10px 0px;
+
+    .loginLogo {
+      .logoText {
+        font-size: 55px;
+        font-weight: bold;
+        font-family: 'Lobster', cursive;
+        text-align: center;
+      }
+    }
+
+    .loginWrapper {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      top: 20px;
+      left: 120px;
+      width: 500px;
+
+      input {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #dbdbdb;
+        width: 280px;
+        height: 35px;
+        background-color: #fafafa;
+        border-radius: 3px;
+        padding: 9px 0px 7px 8px;
+        margin-bottom: 10px;
+
+        &::placeholder {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .buttonWrapper {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      top: 30px;
+      left: 80px;
+      width: 500px;
+
+      a {
+        text-decoration: none;
+        color: white;
+      }
+
+      .login_button {
+        background-color: #0095f6;
+        color: white;
+        font-size: 14px;
+        font-weight: bolder;
+        width: 280px;
+        height: 33px;
+        margin: 5px 40px 80px;
+        padding: 5px 9px;
+        border: 0;
+        border-radius: 3px;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .login_buttonDisabled {
+        background-color: #c4e1fb;
+        color: white;
+        font-size: 14px;
+        font-weight: bolder;
+        width: 280px;
+        height: 33px;
+        margin: 0px 41px 80px;
+        padding: 5px 9px;
+        border: 0;
+        border-radius: 3px;
+      }
+    }
+
+    .findPassword {
+      p {
+        text-decoration: none;
+        color: #00376b;
+        text-align: center;
+        font-size: 15px;
+        margin-left: 30px;
+      }
+    }
+  }
+}
