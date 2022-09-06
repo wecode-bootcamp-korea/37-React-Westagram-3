@@ -5,12 +5,6 @@
   align-items: center;
 }
 
-@mixin flexSort($justify, $alignItems) {
-  display: flex;
-  justify-content: $justify;
-  align-items: $alignItems;
-}
-
 @mixin borderGray {
   border: 1px solid #efefef;
 }
