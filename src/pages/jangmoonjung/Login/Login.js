@@ -3,21 +3,18 @@ import { useNavigate } from 'react-router-dom';
 import './Login.scss';
 
 function LoginJang() {
-  // 입력 데이터 저장
-  const [idValue, setIdValue] = useState('');
-  const [pwValue, setPwValue] = useState('');
-  function saveUserId(event) {
-    setIdValue(event.target.value);
-  }
-  function saveUserPw(event) {
-    setPwValue(event.target.value);
-  }
-  // 로그인 버튼 활성화
+  const [inputValue, setInputValue] = useState({
+    id: '',
+    pw: '',
+  });
+  const handleInput = e => {
+    const { name, value } = e.target;
+    setInputValue({ ...inputValue, [name]: value });
+  };
   const [btnDisable, setBtnDisable] = useState(true);
   const [isActive, setIsActive] = useState(false);
-  const navigate = useNavigate();
   const validationTest = () => {
-    if (idValue.includes('@') && pwValue.length > 5) {
+    if (inputValue.id.includes('@') && inputValue.pw.length > 5) {
       setIsActive(true);
       setBtnDisable(false);
     } else {
@@ -25,6 +22,7 @@ function LoginJang() {
       setBtnDisable(true);
     }
   };
+  const navigate = useNavigate();
   const goToMain = () => {
     if (!btnDisable) {
       navigate('/jangmoonjung/Main');
@@ -37,8 +35,9 @@ function LoginJang() {
         <h1 className="logo">Westagram</h1>
         <form className="form">
           <input
+            name="id"
             onChange={e => {
-              saveUserId(e);
+              handleInput(e);
               validationTest();
             }}
             className="id"
@@ -46,8 +45,9 @@ function LoginJang() {
             placeholder="전화번호, 사용자 이름 또는 이메일"
           />
           <input
+            name="pw"
             onChange={e => {
-              saveUserPw(e);
+              handleInput(e);
               validationTest();
             }}
             className="pw"

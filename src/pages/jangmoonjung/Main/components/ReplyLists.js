@@ -1,7 +1,6 @@
 import React from 'react';
 
-function ReplyLists(props) {
-  const { content } = props;
+function ReplyLists({ content }) {
   return (
     <div className="texts__reply">
       <div className="texts__reply__left">

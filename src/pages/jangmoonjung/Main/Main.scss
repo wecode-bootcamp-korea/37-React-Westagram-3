@@ -1,3 +1,5 @@
+@import '../../../styles/variables.scss';
+
 // main
 .main {
   width: 850px;
@@ -15,16 +17,14 @@
         flex-direction: column;
         width: 470px;
         margin-bottom: 20px;
-        border: 1px solid #e6e6e6;
-        background-color: #ffffff;
+        @include borderGray;
+        background-color: $white-color;
 
         .header {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
+          @include flexSort('space-between', 'center');
           height: 56px;
           padding: 15px;
-          border-bottom: 1px solid #e6e6e6;
+          border-bottom: 1px solid $light-gray-color;
 
           .profile {
             display: flex;
@@ -41,9 +41,9 @@
 
           .id {
             margin-bottom: 4px;
-            color: #262626;
-            font-size: 15px;
-            font-weight: 600;
+            color: $black-color;
+            font-size: $font-medium;
+            @include textBold;
           }
         }
 
@@ -62,7 +62,7 @@
 
             .left {
               .heart {
-                font-size: 23px;
+                font-size: $font-large;
                 transition: all 100ms ease-in-out;
 
                 &:hover {
@@ -72,17 +72,17 @@
 
               .comment {
                 margin: 0 6px 0 8px;
-                font-size: 23px;
+                font-size: $font-large;
               }
 
               .plane {
-                font-size: 23px;
+                font-size: $font-large;
               }
             }
 
             .right {
               .bookmark {
-                font-size: 23px;
+                font-size: $font-large;
               }
             }
           }
@@ -105,15 +105,15 @@
             .text {
               .id {
                 margin-bottom: 4px;
-                color: #262626;
-                font-size: 15px;
-                font-weight: 600;
+                color: $black-color;
+                font-size: $font-medium;
+                @include textBold;
                 line-height: 20px;
               }
 
               .people {
                 line-height: 20px;
-                font-weight: 600;
+                @include textBold;
               }
             }
           }
@@ -128,9 +128,9 @@
 
               .id {
                 margin-bottom: 4px;
-                color: #262626;
-                font-size: 15px;
-                font-weight: 600;
+                color: $black-color;
+                font-size: $font-medium;
+                @include textBold;
               }
 
               .text {
@@ -140,8 +140,8 @@
             }
 
             .more__gray {
-              color: #999999;
-              font-size: 13px;
+              color: $dark-gray-color;
+              font-size: $font-small;
             }
           }
 
@@ -156,9 +156,9 @@
 
                 .id {
                   margin-bottom: 4px;
-                  color: #262626;
-                  font-size: 15px;
-                  font-weight: 600;
+                  color: $black-color;
+                  font-size: $font-medium;
+                  @include textBold;
                 }
 
                 .text {
@@ -169,7 +169,7 @@
 
               .texts__reply__right {
                 .texts__heart {
-                  font-size: 12px;
+                  font-size: $font-micro;
                   padding-left: 5px;
                   transition: all 100ms ease-in-out;
 
@@ -179,7 +179,7 @@
                 }
 
                 .texts__remove {
-                  font-size: 12px;
+                  font-size: $font-micro;
                   padding-left: 5px;
                 }
               }
@@ -190,19 +190,19 @@
             margin-bottom: 10px;
 
             .more__gray {
-              color: #999999;
-              font-size: 13px;
+              color: $dark-gray-color;
+              font-size: $font-small;
             }
 
             .time__before {
-              font-size: 12px;
+              font-size: $font-small;
             }
           }
         }
 
         .reply {
           position: relative;
-          border-top: 1px solid #e6e6e6;
+          border-top: 1px solid $light-gray-color;
           padding: 15px;
 
           .input {
@@ -212,16 +212,16 @@
           }
 
           .textBtnUnactive {
-            color: #0095f6;
-            font-size: 14px;
-            font-weight: 600;
+            color: $blue-color;
+            font-size: $font-regular;
+            @include textBold;
             opacity: 0.3;
           }
 
           .textBtnActive {
-            color: #0095f6;
-            font-size: 14px;
-            font-weight: 600;
+            color: $blue-color;
+            font-size: $font-regular;
+            @include textBold;
             opacity: 1;
             cursor: pointer;
           }
@@ -252,14 +252,14 @@
           .id {
             .id {
               margin-bottom: 4px;
-              color: #262626;
-              font-size: 15px;
-              font-weight: 600;
+              color: $black-color;
+              font-size: $font-medium;
+              @include textBold;
             }
 
             .more__gray {
-              color: #999999;
-              font-size: 13px;
+              color: $dark-gray-color;
+              font-size: $font-small;
             }
           }
         }
@@ -268,8 +268,8 @@
           height: 200px;
           margin: 15px 0;
           padding: 15px 15px 0;
-          background-color: #ffffff;
-          border: 1px solid #e6e6e6;
+          background-color: $white-color;
+          @include borderGray;
           overflow: hidden;
 
           .title {
@@ -278,13 +278,13 @@
             margin-bottom: 20px;
 
             .more__gray {
-              color: #999999;
-              font-size: 13px;
+              color: $dark-gray-color;
+              font-size: $font-small;
             }
 
             .right__more {
-              font-size: 14px;
-              font-weight: 600;
+              font-size: $font-regular;
+              @include textBold;
             }
           }
 
@@ -308,18 +308,18 @@
             .story__id {
               .id {
                 margin-bottom: 4px;
-                color: #262626;
-                font-size: 15px;
-                font-weight: 600;
+                color: $black-color;
+                font-size: $font-medium;
+                @include textBold;
               }
 
               .more__gray {
-                color: #999999;
-                font-size: 13px;
+                color: $dark-gray-color;
+                font-size: $font-small;
               }
 
               .time__before {
-                font-size: 12px;
+                font-size: $font-micro;
               }
             }
           }
@@ -327,8 +327,8 @@
 
         .recommendation {
           padding: 15px 15px 0;
-          background-color: #ffffff;
-          border: 1px solid #e6e6e6;
+          background-color: $white-color;
+          @include borderGray;
 
           .title {
             display: flex;
@@ -336,13 +336,13 @@
             margin-bottom: 20px;
 
             .more__gray {
-              color: #999999;
-              font-size: 13px;
+              color: $dark-gray-color;
+              font-size: $font-small;
             }
 
             .right__more {
-              font-size: 14px;
-              font-weight: 600;
+              font-size: $font-regular;
+              @include textBold;
             }
           }
 
@@ -368,21 +368,21 @@
               .right__recommendation__id {
                 .id {
                   margin-bottom: 4px;
-                  color: #262626;
-                  font-size: 15px;
-                  font-weight: 600;
+                  color: $black-color;
+                  font-size: $font-medium;
+                  @include textBold;
                 }
 
                 .more__gray {
-                  color: #999999;
-                  font-size: 13px;
+                  color: $dark-gray-color;
+                  font-size: $font-small;
                 }
               }
             }
 
             .right__follow {
-              color: #0095f6;
-              font-weight: 600;
+              color: $blue-color;
+              @include textBold;
             }
           }
         }
@@ -390,17 +390,17 @@
 
       // footer
       .footer {
-        color: #c7c7c7;
+        color: $gray-color;
 
         .menu {
           margin: 30px 0;
-          font-size: 14px;
+          font-size: $font-regular;
           padding: 10px 0;
 
           .menu span {
             display: inline-block;
             padding: 5px 0;
-            color: #c7c7c7;
+            color: $gray-color;
 
             &:hover {
               text-decoration: underline;
@@ -410,7 +410,7 @@
         }
 
         .copyright {
-          font-size: 13px;
+          font-size: $font-small;
         }
       }
     }
