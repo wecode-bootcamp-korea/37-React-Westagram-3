@@ -3,14 +3,20 @@ import { useNavigate } from 'react-router-dom';
 import '../Login/Login.scss';
 
 function LoginRa() {
-  const [userId, setUserId] = useState('');
-  const [userPW, setUserPW] = useState('');
+  const [inputValues, setInputValues] = useState([
+    {
+      id: '',
+      pw: '',
+    },
+  ]);
 
-  const saveUserId = event => setUserId(event.target.value);
-  const saveUserPw = event => setUserPW(event.target.value);
+  const handleInput = event => {
+    const { name, value } = event.target;
+    setInputValues({ ...inputValues, [name]: value });
+  };
 
-  const isValidId = userId.includes('@') ? true : false;
-  const isValidPw = userPW.length >= 5 ? true : false;
+  const isValidId = inputValues.id.includes('@');
+  const isValidPw = inputValues.pw.length >= 5;
   const isAllValid = isValidId && isValidPw;
 
   const navigate = useNavigate();
@@ -25,15 +31,15 @@ function LoginRa() {
         <form id="inputBox">
           <div className="input-box">
             <input
-              onChange={saveUserId}
-              id="inputId"
+              onChange={handleInput}
+              name="id"
               type="text"
               placeholder="@가 포함된 이메일 주소를 입력하세요!"
               autoComplete="username"
             />
             <input
-              onChange={saveUserPw}
-              id="inputPw"
+              onChange={handleInput}
+              name="pw"
               type="password"
               placeholder="비밀번호는 다섯글자 이상입니다."
               autoComplete="current-password"
