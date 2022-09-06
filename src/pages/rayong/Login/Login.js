@@ -3,12 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import '../Login/Login.scss';
 
 function LoginRa() {
-  const [inputValues, setInputValues] = useState([
-    {
-      id: '',
-      pw: '',
-    },
-  ]);
+  const [inputValues, setInputValues] = useState({
+    id: '',
+    pw: '',
+  });
 
   const handleInput = event => {
     const { name, value } = event.target;
@@ -17,7 +15,7 @@ function LoginRa() {
 
   const isValidId = inputValues.id.includes('@');
   const isValidPw = inputValues.pw.length >= 5;
-  const isAllValid = isValidId && isValidPw;
+  const isAllValid = isValidPw && isValidId;
 
   const navigate = useNavigate();
   const goToMain = () => {
