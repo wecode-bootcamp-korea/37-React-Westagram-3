@@ -34,7 +34,7 @@ function Login() {
         if (data.message === 'login success') {
           localStorage.setItem('TOKEN', data.token);
           alert('로그인 성공');
-          navigate('/Main');
+          navigate('/JongHwaSung/Main');
         }
       });
   };
