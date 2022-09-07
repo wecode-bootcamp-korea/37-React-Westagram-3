@@ -88,6 +88,7 @@
     .feeds-box {
       background-color: white;
       border-radius: 8px;
+      margin-bottom: 25px;
 
       .feeds-profile {
         .box {
@@ -116,6 +117,8 @@
 
       .feeds-img {
         padding-bottom: 100%;
+        background-size: cover;
+        background-position: center;
       }
 
       .feeds-icons {

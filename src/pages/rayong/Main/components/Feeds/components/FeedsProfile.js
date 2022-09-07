@@ -1,6 +1,6 @@
 import React from 'react';
 
-function FeedsProfile(props) {
+function FeedsProfile({ profileName }) {
   return (
     <div className="feeds-profile">
       <div className="box">
@@ -9,7 +9,7 @@ function FeedsProfile(props) {
             src="https://velog.velcdn.com/images/rayong/profile/df592861-ea43-432c-aea2-a1f79730300b/image.png"
             alt="프로필이미지"
           />
-          <p>wecode_dd</p>
+          <p>{profileName}</p>
         </div>
         <i className="fa-regular fa-compass fa-xl" />
       </div>

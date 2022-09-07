@@ -6,7 +6,7 @@ import FeedsLikes from './components/FeedsLikes';
 import FeedsList from './components/FeedsList';
 import FeedsForm from './components/FeedsForm';
 
-function Feeds(props) {
+function Feeds({ userFeedData }) {
   const [commentsValue, setCommentsValue] = useState('');
   const [commentsArr, setCommentsArr] = useState([]);
 
@@ -32,22 +32,26 @@ function Feeds(props) {
 
   return (
     <div className="feeds">
-      <article className="feeds-box">
-        <FeedsProfile />
-        <FeedsImg />
-        <FeedsIcon />
-        <FeedsLikes />
-        <FeedsList
-          commentsArr={commentsArr}
-          toggleLikeIcon={toggleLikeIcon}
-          deleteCommentsIcon={deleteCommentsIcon}
-        />
-        <FeedsForm
-          makeCommentsArr={makeCommentsArr}
-          saveComments={saveComments}
-          commentsValue={commentsValue}
-        />
-      </article>
+      {userFeedData.map((feedData, index) => {
+        return (
+          <article className="feeds-box" key={feedData.userId}>
+            <FeedsProfile profileName={feedData.userName} />
+            <FeedsImg feedImg={feedData.userImg} />
+            <FeedsIcon />
+            <FeedsLikes />
+            <FeedsList
+              commentsArr={commentsArr}
+              toggleLikeIcon={toggleLikeIcon}
+              deleteCommentsIcon={deleteCommentsIcon}
+            />
+            <FeedsForm
+              makeCommentsArr={makeCommentsArr}
+              saveComments={saveComments}
+              commentsValue={commentsValue}
+            />
+          </article>
+        );
+      })}
     </div>
   );
 }
