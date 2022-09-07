@@ -6,6 +6,8 @@ function FeedsImg({ feedImg }) {
       className="feeds-img"
       style={{
         background: feedImg,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
       }}
     />
   );

@@ -3,24 +3,56 @@ import { useNavigate } from 'react-router-dom';
 import '../Login/Login.scss';
 
 function LoginRa() {
+  const navigate = useNavigate();
   const [inputValues, setInputValues] = useState({
     id: '',
     pw: '',
   });
-
   const handleInput = event => {
     const { name, value } = event.target;
     setInputValues({ ...inputValues, [name]: value });
   };
 
+  const signUp = e => {
+    e.preventDefault();
+    fetch('http://westagram-signup.herokuapp.com/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+      },
+      body: JSON.stringify({
+        id: inputValues.id,
+        password: inputValues.pw,
+      }),
+    })
+      .then(response => {
+        if (response.ok === true) {
+          return response.json();
+        }
+        throw new Error('에러 발생!');
+      })
+      .catch(error => console.log(error))
+      .then(data => {
+        if (data.token) {
+          localStorage.setItem('TOKEN', data.token);
+          alert('로그인 성공');
+          navigate('/rayong/Main');
+        } else {
+          alert('로그인 실패');
+        }
+      });
+  };
+  // id : skdyds888@naver.com
+  // password : 1111111
+
   const isValidId = inputValues.id.includes('@');
   const isValidPw = inputValues.pw.length >= 5;
   const isAllValid = isValidPw && isValidId;
 
-  const navigate = useNavigate();
-  const goToMain = () => {
-    navigate('/rayong/Main');
-  };
+  // const navigate = useNavigate();
+  // const goToMain = () => {
+  //   navigate('/rayong/Main');
+  // };
 
   return (
     <main className="login">
@@ -44,7 +76,7 @@ function LoginRa() {
             />
           </div>
           <div className="btn-box">
-            <button id="loginBtn" onClick={goToMain} disabled={!isAllValid}>
+            <button id="loginBtn" onClick={signUp} disabled={!isAllValid}>
               로그인
             </button>
           </div>
