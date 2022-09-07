@@ -21,9 +21,7 @@
         background-color: $white-color;
 
         .header {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
+          @include flexSort(space-between, center);
           height: 56px;
           padding: 15px;
           border-bottom: 1px solid $light-gray-color;
@@ -58,8 +56,7 @@
           padding: 12px;
 
           .icons {
-            display: flex;
-            justify-content: space-between;
+            @include flexSort(space-between, '');
             height: 40px;
 
             .left {
@@ -90,8 +87,7 @@
           }
 
           .likes {
-            display: flex;
-            align-items: center;
+            @include flexSort('', center);
             margin-bottom: 12px;
 
             .image {
@@ -121,8 +117,7 @@
           }
 
           .texts {
-            display: flex;
-            align-items: center;
+            @include flexSort('', 'center');
             margin-bottom: 5px;
 
             .content {
@@ -144,14 +139,13 @@
             .more__gray {
               color: $dark-gray-color;
               font-size: $font-small;
-              margin: 0 0 5px 8px;
+              margin: 2px 0 0 10px;
             }
           }
 
           .newReply {
             .texts__reply {
-              display: flex;
-              justify-content: space-between;
+              @include flexSort(space-between, '');
               margin-bottom: 5px;
 
               .texts__reply__left {
@@ -276,8 +270,7 @@
           overflow: hidden;
 
           .title {
-            display: flex;
-            justify-content: space-between;
+            @include flexSort(space-between, '');
             margin-bottom: 20px;
 
             .more__gray {
@@ -292,13 +285,11 @@
           }
 
           .profile {
-            display: flex;
-            align-items: center;
+            @include flexSort('', center);
             margin-bottom: 10px;
 
             .image {
-              display: flex;
-              align-items: center;
+              @include flexSort('', center);
               margin-right: 10px;
 
               .right__story__img {
@@ -334,8 +325,7 @@
           @include borderGray;
 
           .title {
-            display: flex;
-            justify-content: space-between;
+            @include flexSort('space-between', '');
             margin-bottom: 20px;
 
             .more__gray {
@@ -350,9 +340,7 @@
           }
 
           .profile {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            @include flexSort(space-between, center);
             margin-bottom: 20px;
 
             .left {

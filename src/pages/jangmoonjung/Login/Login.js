@@ -23,10 +23,36 @@ function LoginJang() {
     }
   };
   const navigate = useNavigate();
-  const goToMain = () => {
-    if (!btnDisable) {
-      navigate('/jangmoonjung/Main');
-    }
+  // const goToMain = e => {
+  //   e.preventDefault();
+  //   if (!btnDisable) {
+  //     navigate('/jangmoonjung/Main');
+  //   }
+  // };
+  const goToMain = e => {
+    e.preventDefault();
+    fetch('http://10.58.3.201:3000/auth/signin', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+      },
+      body: JSON.stringify({
+        email: inputValue.id,
+        password: inputValue.pw,
+      }),
+    })
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        if (data.message === 'login success') {
+          localStorage.setItem('TOKEN', data.token);
+          alert('로그인 성공');
+          navigate('/jangmoonjung/Main');
+          return;
+        }
+        alert('로그인 실패');
+      });
   };
 
   return (
