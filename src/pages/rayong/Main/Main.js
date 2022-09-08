@@ -10,7 +10,7 @@ function MainRa() {
 
   useEffect(() => {
     fetch('/data/userFeedData.json')
-      .then(respones => respones.json())
+      .then(response => response.json())
       .then(data => setUserFeedData(data));
   }, []);
 

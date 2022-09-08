@@ -27,13 +27,10 @@
     }
 
     .nav-box {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      @include flexSort(space-between, center);
 
       .logo-box {
-        display: flex;
-        align-items: center;
+        @include flexSort('', center);
       }
 
       .logo-box p {
@@ -92,14 +89,11 @@
 
       .feeds-profile {
         .box {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
+          @include flexSort(space-between, center);
           padding: 15px;
 
           .user {
-            display: flex;
-            align-items: center;
+            @include flexSort('', center);
 
             p {
               font-weight: bold;
@@ -121,8 +115,7 @@
 
       .feeds-icons {
         .box {
-          display: flex;
-          justify-content: space-between;
+          @include flexSort(space-between, '');
           padding: 20px 15px 10px;
           background-color: white;
 
@@ -138,8 +131,7 @@
 
       .feeds-likes {
         .box {
-          display: flex;
-          align-items: center;
+          @include flexSort('', center);
           padding: 5px 15px;
         }
 
@@ -155,8 +147,7 @@
         padding: 15px 15px 0;
 
         li {
-          display: flex;
-          justify-content: space-between;
+          @include flexSort(space-between, '');
           margin-bottom: 10px;
           padding-right: 5px;
         }
@@ -204,8 +195,7 @@
 
       .right-profile {
         .box {
-          display: flex;
-          align-items: center;
+          @include flexSort('', center);
           margin-bottom: 15px;
         }
 
@@ -234,8 +224,7 @@
         background-color: white;
 
         .top {
-          display: flex;
-          justify-content: space-between;
+          @include flexSort(space-between, '');
           margin-bottom: 15px;
         }
 
@@ -247,8 +236,7 @@
         }
 
         li {
-          display: flex;
-          align-items: center;
+          @include flexSort('', center);
           margin-bottom: 10px;
         }
 
@@ -270,8 +258,7 @@
         background-color: white;
 
         .top {
-          display: flex;
-          justify-content: space-between;
+          @include flexSort(space-between, '');
           margin-bottom: 15px;
         }
 
@@ -293,15 +280,12 @@
         }
 
         .list li {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
+          @include flexSort(space-between, center);
           margin-bottom: 10px;
         }
 
         .list div {
-          display: flex;
-          align-items: center;
+          @include flexSort('', center);
         }
       }
 
