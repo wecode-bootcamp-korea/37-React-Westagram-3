@@ -1,17 +1,16 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Nav from '../../../components/Nav/Nav';
 import Feeds from './components/Feeds/Feeds';
 import MainRight from './components/MainRight/MainRight';
 import '../Main/Main.scss';
 
 function MainRa() {
-  const [userFeedData, setUserFeedData] = useState([]);
+  const [userFeedInfo, setUserFeedInfo] = useState([]);
 
   useEffect(() => {
-    fetch('/data/userFeedData.json')
+    fetch('/data/userFeedInfo.json')
       .then(response => response.json())
-      .then(data => setUserFeedData(data));
+      .then(data => setUserFeedInfo(data));
   }, []);
 
   return (
@@ -21,11 +20,11 @@ function MainRa() {
         <div className="wrapper">
           <div className="contents-box">
             <div className="feeds-wrapper">
-              {userFeedData.map(feedData => {
-                return <Feeds key={feedData.userId} feedData={feedData} />;
+              {userFeedInfo.map(feedInfo => {
+                return <Feeds key={feedInfo.userId} feedInfo={feedInfo} />;
               })}
             </div>
-            <MainRight />
+            <MainRight userFeedInfo={userFeedInfo} />
           </div>
         </div>
       </main>

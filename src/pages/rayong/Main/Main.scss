@@ -192,6 +192,9 @@
     .main-right {
       flex: 1;
       margin-bottom: 15px;
+      position: sticky;
+      height: 800px;
+      top: 15px;
 
       .right-profile {
         .box {

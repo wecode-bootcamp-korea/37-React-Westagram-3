@@ -6,7 +6,7 @@ import FeedsLikes from './components/FeedsLikes';
 import FeedsList from './components/FeedsList';
 import FeedsForm from './components/FeedsForm';
 
-function Feeds({ feedData }) {
+function Feeds({ feedInfo }) {
   const [commentsValue, setCommentsValue] = useState('');
   const [commentsArr, setCommentsArr] = useState([]);
 
@@ -32,9 +32,9 @@ function Feeds({ feedData }) {
 
   return (
     <div className="feeds">
-      <article className="feeds-box" key={feedData.userId}>
-        <FeedsProfile profileName={feedData.userName} />
-        <FeedsImg feedImg={feedData.userImg} />
+      <article className="feeds-box" key={feedInfo.userId}>
+        <FeedsProfile profileName={feedInfo.userName} />
+        <FeedsImg feedImg={feedInfo.userImg} />
         <FeedsIcon />
         <FeedsLikes />
         <FeedsList

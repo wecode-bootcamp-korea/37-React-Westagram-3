@@ -4,16 +4,17 @@ import '../Login/Login.scss';
 
 function LoginRa() {
   const navigate = useNavigate();
-  const [inputValues, setInputValues] = useState({
+  const [userInput, setUserInput] = useState({
     id: '',
     pw: '',
   });
+
   const handleInput = event => {
     const { name, value } = event.target;
-    setInputValues({ ...inputValues, [name]: value });
+    setUserInput({ ...userInput, [name]: value });
   };
 
-  const signUp = e => {
+  const login = e => {
     e.preventDefault();
     fetch('http://westagram-signup.herokuapp.com/login', {
       method: 'POST',
@@ -21,8 +22,8 @@ function LoginRa() {
         'Content-Type': 'application/json;charset=utf-8',
       },
       body: JSON.stringify({
-        id: inputValues.id,
-        password: inputValues.pw,
+        id: userInput.id,
+        password: userInput.pw,
       }),
     })
       .then(response => {
@@ -31,7 +32,7 @@ function LoginRa() {
         }
         throw new Error('에러 발생!');
       })
-      .catch(error => console.log(error))
+      .catch(error => alert(error))
       .then(data => {
         if (data.token) {
           localStorage.setItem('TOKEN', data.token);
@@ -45,8 +46,8 @@ function LoginRa() {
   // id : skdyds888@naver.com
   // password : 1111111
 
-  const isValidId = inputValues.id.includes('@');
-  const isValidPw = inputValues.pw.length >= 5;
+  const isValidId = userInput.id.includes('@');
+  const isValidPw = userInput.pw.length >= 5;
   const isAllValid = isValidPw && isValidId;
 
   // const navigate = useNavigate();
@@ -76,7 +77,7 @@ function LoginRa() {
             />
           </div>
           <div className="btn-box">
-            <button id="loginBtn" onClick={signUp} disabled={!isAllValid}>
+            <button id="loginBtn" onClick={login} disabled={!isAllValid}>
               로그인
             </button>
           </div>

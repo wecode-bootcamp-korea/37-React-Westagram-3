@@ -1,7 +1,7 @@
 import React from 'react';
 import RightSubText from './components/RightSubText';
 
-function MainRight(props) {
+function MainRight({ userFeedInfo }) {
   return (
     <div className="main-right">
       <div className="right-profile">
@@ -27,42 +27,18 @@ function MainRight(props) {
             </p>
           </div>
           <ul className="list">
-            <li>
-              <img
-                className="profile"
-                src="https://velog.velcdn.com/images/rayong/profile/df592861-ea43-432c-aea2-a1f79730300b/image.png"
-                alt=""
-              />
-              <p>
-                <strong>rayong</strong>
-                <br />
-                12시간 전
-              </p>
-            </li>
-            <li>
-              <img
-                className="profile"
-                src="https://velog.velcdn.com/images/rayong/profile/df592861-ea43-432c-aea2-a1f79730300b/image.png"
-                alt=""
-              />
-              <p>
-                <strong>rayong</strong>
-                <br />
-                12시간 전
-              </p>
-            </li>
-            <li>
-              <img
-                className="profile"
-                src="https://velog.velcdn.com/images/rayong/profile/df592861-ea43-432c-aea2-a1f79730300b/image.png"
-                alt=""
-              />
-              <p>
-                <strong>rayong</strong>
-                <br />
-                12시간 전
-              </p>
-            </li>
+            {userFeedInfo.map(feedInfo => {
+              return (
+                <li key={feedInfo.userId}>
+                  <img className="profile" src={feedInfo.profileImg} alt="" />
+                  <p>
+                    <strong>{feedInfo.userName}</strong>
+                    <br />
+                    {feedInfo.beforeTime}
+                  </p>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>
@@ -75,51 +51,21 @@ function MainRight(props) {
             </p>
           </div>
           <ul className="list">
-            <li>
-              <div>
-                <img
-                  className="profile"
-                  src="https://velog.velcdn.com/images/rayong/profile/df592861-ea43-432c-aea2-a1f79730300b/image.png"
-                  alt=""
-                />
-                <p>
-                  <strong>rayong</strong>
-                  <br />
-                  12시간 전
-                </p>
-              </div>
-              <p>팔로우</p>
-            </li>
-            <li>
-              <div>
-                <img
-                  className="profile"
-                  src="https://velog.velcdn.com/images/rayong/profile/df592861-ea43-432c-aea2-a1f79730300b/image.png"
-                  alt=""
-                />
-                <p>
-                  <strong>rayong</strong>
-                  <br />
-                  12시간 전
-                </p>
-              </div>
-              <p>팔로우</p>
-            </li>
-            <li>
-              <div>
-                <img
-                  className="profile"
-                  src="https://velog.velcdn.com/images/rayong/profile/df592861-ea43-432c-aea2-a1f79730300b/image.png"
-                  alt=""
-                />
-                <p>
-                  <strong>rayong</strong>
-                  <br />
-                  12시간 전
-                </p>
-              </div>
-              <p>팔로우</p>
-            </li>
+            {userFeedInfo.map(feedInfo => {
+              return (
+                <li key={feedInfo.userId}>
+                  <div>
+                    <img className="profile" src={feedInfo.profileImg} alt="" />
+                    <p>
+                      <strong>{feedInfo.userName}</strong>
+                      <br />
+                      {feedInfo.beforeTime}
+                    </p>
+                  </div>
+                  <p>팔로우</p>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>

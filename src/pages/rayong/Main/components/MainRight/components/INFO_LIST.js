@@ -8,5 +8,5 @@ export const INFO_LIST = [
   { id: 7, content: '약관' },
   { id: 8, content: '위치' },
   { id: 9, content: '언어' },
-  { id: 9, content: '위코드에서공부중' },
+  { id: 10, content: '위코드에서공부중' },
 ];
