@@ -20,7 +20,11 @@ function MainRa() {
       <main className="contents">
         <div className="wrapper">
           <div className="contents-box">
-            <Feeds userFeedData={userFeedData} />
+            <div className="feeds-wrapper">
+              {userFeedData.map(feedData => {
+                return <Feeds key={feedData.userId} feedData={feedData} />;
+              })}
+            </div>
             <MainRight />
           </div>
         </div>

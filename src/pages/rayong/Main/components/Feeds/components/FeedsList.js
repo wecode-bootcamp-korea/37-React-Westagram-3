@@ -4,7 +4,7 @@ function FeedsList({ commentsArr, toggleLikeIcon, deleteCommentsIcon }) {
   return (
     <ul id="feedsList" className="feeds-list">
       {commentsArr.map((value, index) => (
-        <li key={value.code}>
+        <li key={value.id}>
           <span>
             <strong>wecode</strong>
             {value}
