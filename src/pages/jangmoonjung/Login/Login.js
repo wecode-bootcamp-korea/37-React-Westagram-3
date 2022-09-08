@@ -3,32 +3,30 @@ import { useNavigate } from 'react-router-dom';
 import './Login.scss';
 
 function LoginJang() {
-  const [inputValue, setInputValue] = useState({
+  const [userInfo, setUserInfo] = useState({
     id: '',
     pw: '',
   });
+
   const handleInput = e => {
     const { name, value } = e.target;
-    setInputValue({ ...inputValue, [name]: value });
+    // setUserInfo({ ...userInfo, [name]: value });
+    setUserInfo(prev => {
+      return { ...prev, [name]: value };
+    });
   };
-  const [btnDisable, setBtnDisable] = useState(true);
-  const [isActive, setIsActive] = useState(false);
-  const validationTest = () => {
-    if (inputValue.id.includes('@') && inputValue.pw.length > 5) {
-      setIsActive(true);
-      setBtnDisable(false);
-    } else {
-      setIsActive(false);
-      setBtnDisable(true);
-    }
-  };
+
+  const isValid = userInfo.id.includes('@') && userInfo.pw.length > 5;
+
   const navigate = useNavigate();
+
   // const goToMain = e => {
   //   e.preventDefault();
   //   if (!btnDisable) {
   //     navigate('/jangmoonjung/Main');
   //   }
   // };
+
   const goToMain = e => {
     e.preventDefault();
     fetch('http://10.58.3.201:3000/auth/signin', {
@@ -37,8 +35,8 @@ function LoginJang() {
         'Content-Type': 'application/json;charset=utf-8',
       },
       body: JSON.stringify({
-        email: inputValue.id,
-        password: inputValue.pw,
+        email: userInfo.id,
+        password: userInfo.pw,
       }),
     })
       .then(response => {
@@ -64,7 +62,6 @@ function LoginJang() {
             name="id"
             onChange={e => {
               handleInput(e);
-              validationTest();
             }}
             className="id"
             type="text"
@@ -74,17 +71,16 @@ function LoginJang() {
             name="pw"
             onChange={e => {
               handleInput(e);
-              validationTest();
             }}
             className="pw"
             type="password"
             placeholder="비밀번호"
           />
           <button
-            disabled={btnDisable}
+            disabled={!isValid}
             onClick={goToMain}
             type="button"
-            className={isActive ? 'btnActive' : 'btnUnactive'}
+            className={isValid ? 'btnActive' : 'btnUnactive'}
           >
             로그인
           </button>

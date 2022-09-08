@@ -14,10 +14,10 @@
       width: 60%;
 
       .container {
+        @include borderGray;
         flex-direction: column;
         width: 470px;
         margin-bottom: 20px;
-        @include borderGray;
         background-color: $white-color;
 
         .header {
@@ -40,10 +40,10 @@
           }
 
           .id {
+            @include textBold;
             margin-bottom: 4px;
             color: $black-color;
             font-size: $font-medium;
-            @include textBold;
           }
         }
 
@@ -102,16 +102,16 @@
 
             .text {
               .id {
+                @include textBold;
                 margin-bottom: 4px;
                 color: $black-color;
                 font-size: $font-medium;
-                @include textBold;
                 line-height: 25px;
               }
 
               .people {
-                line-height: 20px;
                 @include textBold;
+                line-height: 20px;
               }
             }
           }
@@ -124,10 +124,10 @@
               display: flex;
 
               .id {
+                @include textBold;
                 margin-bottom: 4px;
                 color: $black-color;
                 font-size: $font-medium;
-                @include textBold;
               }
 
               .text {
@@ -152,10 +152,10 @@
                 display: flex;
 
                 .id {
+                  @include textBold;
                   margin-bottom: 4px;
                   color: $black-color;
                   font-size: $font-medium;
-                  @include textBold;
                 }
 
                 .text {
@@ -209,16 +209,16 @@
           }
 
           .textBtnUnactive {
+            @include textBold;
             color: $blue-color;
             font-size: $font-regular;
-            @include textBold;
             opacity: 0.3;
           }
 
           .textBtnActive {
+            @include textBold;
             color: $blue-color;
             font-size: $font-regular;
-            @include textBold;
             opacity: 1;
             cursor: pointer;
           }
@@ -248,10 +248,10 @@
 
           .id {
             .id {
+              @include textBold;
               margin-bottom: 4px;
               color: $black-color;
               font-size: $font-medium;
-              @include textBold;
             }
 
             .more__gray {
@@ -262,11 +262,11 @@
         }
 
         .story {
+          @include borderGray;
           height: 200px;
           margin: 15px 0;
           padding: 15px 15px 0;
           background-color: $white-color;
-          @include borderGray;
           overflow: hidden;
 
           .title {
@@ -279,8 +279,8 @@
             }
 
             .right__more {
-              font-size: $font-regular;
               @include textBold;
+              font-size: $font-regular;
             }
           }
 
@@ -301,10 +301,10 @@
 
             .story__id {
               .id {
+                @include textBold;
                 margin-bottom: 4px;
                 color: $black-color;
                 font-size: $font-medium;
-                @include textBold;
               }
 
               .more__gray {
@@ -320,9 +320,9 @@
         }
 
         .recommendation {
+          @include borderGray;
           padding: 15px 15px 0;
           background-color: $white-color;
-          @include borderGray;
 
           .title {
             @include flexSort('space-between', '');
@@ -334,8 +334,8 @@
             }
 
             .right__more {
-              font-size: $font-regular;
               @include textBold;
+              font-size: $font-regular;
             }
           }
 
@@ -358,10 +358,10 @@
 
               .right__recommendation__id {
                 .id {
+                  @include textBold;
                   margin-bottom: 4px;
                   color: $black-color;
                   font-size: $font-medium;
-                  @include textBold;
                 }
 
                 .more__gray {
@@ -372,8 +372,8 @@
             }
 
             .right__follow {
-              color: $blue-color;
               @include textBold;
+              color: $blue-color;
             }
           }
         }

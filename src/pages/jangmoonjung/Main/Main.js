@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import Nav from '../../../components/Nav/Nav';
-import FeedLists from './components/FeedLists';
-import { FOOTER_LIST } from '../Main/components/FooterList';
+import FeedLists from './FeedLists';
+import { FOOTER_LIST } from './FooterList';
 import './Main.scss';
 
 function MainJang() {
   const [feedsInfoList, setFeedsInfoList] = useState([]);
 
   useEffect(() => {
-    fetch('/data/feedsData.json').then(response => {
-      response.json().then(result => setFeedsInfoList(result));
-    });
+    fetch('/data/feedListInfo.json')
+      .then(response => {
+        return response.json();
+      })
+      .then(result => setFeedsInfoList(result));
   }, []);
 
   return (

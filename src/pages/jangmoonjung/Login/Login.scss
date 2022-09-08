@@ -1,21 +1,16 @@
 @import '../../../styles/variables.scss';
 
-body {
-  background-color: $background-color;
-  min-width: 500px;
-}
-
 .login {
   @include flexCenter;
   min-height: 100vh;
 
   .container {
+    @include borderGray;
     position: relative;
     width: 400px;
     height: 450px;
     padding: 50px;
     background-color: $white-color;
-    @include borderGray;
   }
 
   .logo {
@@ -26,11 +21,11 @@ body {
   }
 
   .id {
+    @include borderGray;
     display: block;
     width: 300px;
     padding: 10px;
     color: $gray-color;
-    @include borderGray;
     border-radius: $loginForm-style;
     background-color: $background-color;
 
@@ -40,12 +35,12 @@ body {
   }
 
   .pw {
+    @include borderGray;
     display: block;
     width: 300px;
     padding: 10px;
     margin: 10px 0 20px;
     color: $gray-color;
-    @include borderGray;
     border-radius: $loginForm-style;
     background-color: $background-color;
 
@@ -83,13 +78,13 @@ body {
   }
 
   .find {
+    @include textBold;
     position: absolute;
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
     color: #043667;
     font-size: $font-regular;
-    @include textBold;
     cursor: pointer;
   }
 }

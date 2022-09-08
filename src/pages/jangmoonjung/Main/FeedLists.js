@@ -4,31 +4,23 @@ import ReplyLists from './ReplyLists';
 function FeedLists({ feedsInfo }) {
   const [replyValue, setReplyValue] = useState('');
   const [replyArray, setReplyArray] = useState([]);
-  const [replyDisable, setReplyDisable] = useState(true);
-  const [replyActive, setReplyActive] = useState(false);
+
   const replyInput = event => {
     setReplyValue(event.target.value);
   };
-  const replyValidation = () => {
-    if (replyValue.trim().length > 0) {
-      setReplyActive(true);
-      setReplyDisable(false);
-    } else {
-      setReplyActive(false);
-      setReplyDisable(true);
-    }
-  };
+
+  const replyValidation = replyValue.trim().length > 0;
+
   const replyRegist = event => {
     event.preventDefault();
     if (replyValue.trim().length === 0) {
-      setReplyActive(false);
-      setReplyDisable(true);
       return;
     } else {
       setReplyArray([...replyArray, replyValue]);
       setReplyValue('');
     }
   };
+
   return (
     <article className="container">
       <div className="header">
@@ -105,19 +97,16 @@ function FeedLists({ feedsInfo }) {
       <form onSubmit={replyRegist} className="reply">
         <input
           value={replyValue}
-          onChange={e => {
-            replyInput(e);
-            replyValidation();
-          }}
+          onChange={replyInput}
           className="input"
           type="text"
           placeholder="댓글 달기...."
         />
         <button
           onClick={replyRegist}
-          disabled={replyDisable}
+          disabled={!replyValidation}
           type="button"
-          className={replyActive ? 'textBtnActive' : 'textBtnUnactive'}
+          className={replyValidation ? 'textBtnActive' : 'textBtnUnactive'}
         >
           게시
         </button>
