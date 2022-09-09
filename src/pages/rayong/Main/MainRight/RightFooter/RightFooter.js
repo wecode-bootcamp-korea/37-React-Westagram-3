@@ -1,9 +1,9 @@
 import React from 'react';
 import { INFO_LIST } from './INFO_LIST';
 
-function RightSubText() {
+function RightFooter() {
   return (
-    <p className="right-subtext">
+    <p className="rightFooter">
       westagram&nbsp;
       {INFO_LIST.map(info => {
         return <span key={info.id}>{info.content}</span>;
@@ -12,4 +12,4 @@ function RightSubText() {
   );
 }
 
-export default RightSubText;
+export default RightFooter;

@@ -58,11 +58,12 @@ function LoginRa() {
   return (
     <main className="login">
       <div className="wrapper">
-        <section className="logo-text">Westagram</section>
+        <section className="logoText">Westagram</section>
         <form id="inputBox">
-          <div className="input-box">
+          <div className="inputBox">
             <input
               onChange={handleInput}
+              className="userInput"
               name="id"
               type="text"
               placeholder="@가 포함된 이메일 주소를 입력하세요!"
@@ -70,14 +71,20 @@ function LoginRa() {
             />
             <input
               onChange={handleInput}
+              className="userInput"
               name="pw"
               type="password"
               placeholder="비밀번호는 다섯글자 이상입니다."
               autoComplete="current-password"
             />
           </div>
-          <div className="btn-box">
-            <button id="loginBtn" onClick={login} disabled={!isAllValid}>
+          <div className="btnBox">
+            <button
+              id="loginBtn"
+              className="loginBtn"
+              onClick={login}
+              disabled={!isAllValid}
+            >
               로그인
             </button>
           </div>

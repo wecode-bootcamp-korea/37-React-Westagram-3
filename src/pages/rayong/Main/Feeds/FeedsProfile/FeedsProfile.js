@@ -2,7 +2,7 @@ import React from 'react';
 
 function FeedsProfile({ profileName }) {
   return (
-    <div className="feeds-profile">
+    <div className="feedsProfile">
       <div className="box">
         <div className="user">
           <img

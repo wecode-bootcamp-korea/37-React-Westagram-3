@@ -1,8 +1,8 @@
 import React from 'react';
 
-function FeedsForm({ makeCommentsArr, saveComments, commentsValue }) {
+function FeedsCommentInput({ makeCommentsArr, saveComments, commentsValue }) {
   return (
-    <form onSubmit={makeCommentsArr} id="feedsForm" className="feeds-input">
+    <form onSubmit={makeCommentsArr} id="feedsForm" className="feedsInput">
       <input
         onChange={saveComments}
         id="feedsInput"
@@ -15,4 +15,4 @@ function FeedsForm({ makeCommentsArr, saveComments, commentsValue }) {
   );
 }
 
-export default FeedsForm;
+export default FeedsCommentInput;

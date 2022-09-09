@@ -1,13 +1,12 @@
 import React from 'react';
-import RightSubText from './components/RightSubText';
+import RightFooter from './RightFooter/RightFooter';
 
 function MainRight({ userFeedInfo }) {
   return (
-    <div className="main-right">
-      <div className="right-profile">
+    <div className="mainRight">
+      <div className="rightProfile">
         <div className="box">
           <img
-            className="big-icon"
             src="https://velog.velcdn.com/images/rayong/profile/df592861-ea43-432c-aea2-a1f79730300b/image.png"
             alt=""
           />
@@ -18,7 +17,7 @@ function MainRight({ userFeedInfo }) {
           </p>
         </div>
       </div>
-      <div className="right-story">
+      <div className="rightStory">
         <div className="box">
           <div className="top">
             <p>스토리</p>
@@ -42,7 +41,7 @@ function MainRight({ userFeedInfo }) {
           </ul>
         </div>
       </div>
-      <div className="right-suggest">
+      <div className="rightSuggest">
         <div className="box">
           <div className="top">
             <p>회원님을 위한 추천</p>
@@ -69,8 +68,8 @@ function MainRight({ userFeedInfo }) {
           </ul>
         </div>
       </div>
-      <RightSubText />
-      <p className="right-cc">@ 2019 INSTARGRAM</p>
+      <RightFooter />
+      <p className="rightCopy">@ 2019 INSTARGRAM</p>
     </div>
   );
 }

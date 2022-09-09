@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Nav from '../../../components/Nav/Nav';
-import Feeds from './components/Feeds/Feeds';
-import MainRight from './components/MainRight/MainRight';
+import Feeds from './Feeds/Feeds';
+import MainRight from './MainRight/MainRight';
 import '../Main/Main.scss';
 
 function MainRa() {
@@ -14,21 +14,19 @@ function MainRa() {
   }, []);
 
   return (
-    <div className="main">
+    <main className="main">
       <Nav />
-      <main className="contents">
-        <div className="wrapper">
-          <div className="contents-box">
-            <div className="feeds-wrapper">
-              {userFeedInfo.map(feedInfo => {
-                return <Feeds key={feedInfo.userId} feedInfo={feedInfo} />;
-              })}
-            </div>
-            <MainRight userFeedInfo={userFeedInfo} />
+      <div className="wrapper">
+        <div className="contentsBox">
+          <div className="feedsWrapper">
+            {userFeedInfo.map(feedInfo => {
+              return <Feeds key={feedInfo.userId} feedInfo={feedInfo} />;
+            })}
           </div>
+          <MainRight userFeedInfo={userFeedInfo} />
         </div>
-      </main>
-    </div>
+      </div>
+    </main>
   );
 }
 

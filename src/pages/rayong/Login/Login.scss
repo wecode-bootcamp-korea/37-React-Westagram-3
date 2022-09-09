@@ -14,7 +14,7 @@
     box-shadow: 10px 10px rgba(10, 10, 10, 0.1);
   }
 
-  .logo-text {
+  .logoText {
     @include flexCenter;
     padding: 50px 0 10px;
     color: $primary-color;
@@ -22,10 +22,10 @@
     font-family: 'Lobster', cursive;
   }
 
-  .input-box {
+  .inputBox {
     padding: 20px 0 30px;
 
-    input {
+    .userInput {
       display: block;
       width: 60%;
       margin: 0 auto;
@@ -46,8 +46,8 @@
     }
   }
 
-  .btn-box {
-    button {
+  .btnBox {
+    .loginBtn {
       display: block;
       margin: 0 auto;
       padding: 10px 50px;

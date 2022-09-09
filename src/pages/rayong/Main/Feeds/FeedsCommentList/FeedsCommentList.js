@@ -1,8 +1,8 @@
 import React from 'react';
 
-function FeedsList({ commentsArr, toggleLikeIcon, deleteCommentsIcon }) {
+function FeedsCommentList({ commentsArr, toggleLikeIcon, deleteCommentsIcon }) {
   return (
-    <ul id="feedsList" className="feeds-list">
+    <ul id="feedsList" className="feedsList">
       {commentsArr.map((value, index) => (
         <li key={value.id}>
           <span>
@@ -22,4 +22,4 @@ function FeedsList({ commentsArr, toggleLikeIcon, deleteCommentsIcon }) {
   );
 }
 
-export default FeedsList;
+export default FeedsCommentList;
