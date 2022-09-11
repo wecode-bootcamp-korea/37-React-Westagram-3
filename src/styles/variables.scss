@@ -1,0 +1,41 @@
+// @mixin
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexSort($justify, $alignItems) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $alignItems;
+}
+
+@mixin borderGray {
+  border: 1px solid #efefef;
+}
+
+@mixin textBold {
+  font-weight: 600;
+}
+
+// variables
+
+// color
+$background-color: #fafafa;
+$white-color: #ffffff;
+$blue-color: #0095f6;
+$light-gray-color: #efefef;
+$gray-color: #c7c7c7;
+$dark-gray-color: #9b9b9b;
+$black-color: #262626;
+
+// style
+$loginForm-style: 5px;
+
+// font-size
+$font-micro: 12px;
+$font-small: 13px;
+$font-regular: 14px;
+$font-medium: 15px;
+$font-large: 23px;

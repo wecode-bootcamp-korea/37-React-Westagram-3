@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Nav from './components/Nav/Nav';
 
 // 라용의 컴포넌트
 import LoginRa from './pages/rayong/Login/Login';
@@ -22,7 +21,6 @@ import MainHong from './pages/jisuhong/Main/Main';
 const Router = () => {
   return (
     <BrowserRouter>
-      <Nav />
       <Routes>
         <Route path="/rayong/Login" element={<LoginRa />} />
         <Route path="/rayong/Main" element={<MainRa />} />

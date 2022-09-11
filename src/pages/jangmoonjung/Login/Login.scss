@@ -1,0 +1,90 @@
+@import '../../../styles/variables.scss';
+
+.login {
+  @include flexCenter;
+  min-height: 100vh;
+
+  .container {
+    @include borderGray;
+    position: relative;
+    width: 400px;
+    height: 450px;
+    padding: 50px;
+    background-color: $white-color;
+  }
+
+  .logo {
+    margin-bottom: 50px;
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    font-size: 50px;
+  }
+
+  .id {
+    @include borderGray;
+    display: block;
+    width: 300px;
+    padding: 10px;
+    color: $gray-color;
+    border-radius: $loginForm-style;
+    background-color: $background-color;
+
+    &::placeholder {
+      color: $gray-color;
+    }
+  }
+
+  .pw {
+    @include borderGray;
+    display: block;
+    width: 300px;
+    padding: 10px;
+    margin: 10px 0 20px;
+    color: $gray-color;
+    border-radius: $loginForm-style;
+    background-color: $background-color;
+
+    &::placeholder {
+      color: $gray-color;
+    }
+  }
+
+  .btnActive {
+    width: 300px;
+    padding: 10px;
+    border-radius: $loginForm-style;
+    color: $white-color;
+    background-color: $blue-color;
+    font-size: $font-regular;
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  .btnUnactive {
+    width: 300px;
+    padding: 10px;
+    border-radius: $loginForm-style;
+    color: $white-color;
+    background-color: $blue-color;
+    font-size: $font-regular;
+    opacity: 0.3;
+  }
+
+  .validation {
+    display: block;
+    padding: 30px 0;
+    color: #ed4956;
+    font-size: $font-regular;
+  }
+
+  .find {
+    @include textBold;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #043667;
+    font-size: $font-regular;
+    cursor: pointer;
+  }
+}

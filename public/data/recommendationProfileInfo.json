@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "recommendationImg": "/images/jangmoonjung/recommendation__profile_01.jpg",
+    "recommendationId": "joaaaaaaahye",
+    "recommendationContent": "_legend_a님 외 2명이..."
+  },
+  {
+    "id": 2,
+    "recommendationImg": "/images/jangmoonjung/recommendation__profile_02.jpg",
+    "recommendationId": "rampart81",
+    "recommendationContent": "ringo,in,seoul님 외 12명..."
+  },
+  {
+    "id": 3,
+    "recommendationImg": "/images/jangmoonjung/recommendation__profile_03.jpg",
+    "recommendationId": "shawnjjoo",
+    "recommendationContent": "jimmylee1220님 외 1..."
+  }
+]
