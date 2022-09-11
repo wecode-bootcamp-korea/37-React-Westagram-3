@@ -325,7 +325,7 @@
           background-color: $white-color;
 
           .title {
-            @include flexSort('space-between', '');
+            @include flexSort(space-between, '');
             margin-bottom: 20px;
 
             .more__gray {

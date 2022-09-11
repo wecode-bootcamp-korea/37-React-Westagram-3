@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import Nav from '../../../components/Nav/Nav';
 import FeedLists from './FeedLists';
+import StoryProfile from './StoryProfile';
+import RecommendationProfile from './RecommendationProfile';
 import { FOOTER_LIST } from './FooterList';
 import './Main.scss';
 
 function MainJang() {
   const [feedsInfoList, setFeedsInfoList] = useState([]);
+  const [storyProfileList, setStoryProfileList] = useState([]);
+  const [recommendationProfileList, setRecommendationProfileList] = useState(
+    []
+  );
 
   useEffect(() => {
     fetch('/data/feedListInfo.json')
@@ -13,6 +19,22 @@ function MainJang() {
         return response.json();
       })
       .then(result => setFeedsInfoList(result));
+  }, []);
+
+  useEffect(() => {
+    fetch('/data/storyProfileInfo.json')
+      .then(response => {
+        return response.json();
+      })
+      .then(result => setStoryProfileList(result));
+  }, []);
+
+  useEffect(() => {
+    fetch('/data/recommendationProfileInfo.json')
+      .then(response => {
+        return response.json();
+      })
+      .then(result => setRecommendationProfileList(result));
   }, []);
 
   return (
@@ -47,114 +69,28 @@ function MainJang() {
                   <div className="more__gray">스토리</div>
                   <div className="right__more">모두 보기</div>
                 </div>
-                <div className="profile">
-                  <div className="image">
-                    <img
-                      className="right__story__img"
-                      src="/images/jangmoonjung/story__profile_01.jpg"
-                      alt="right__profile__img"
+                {storyProfileList.map(storyProfile => {
+                  return (
+                    <StoryProfile
+                      key={storyProfile.id}
+                      storyProfile={storyProfile}
                     />
-                  </div>
-                  <div className="story__id">
-                    <div className="id">_yum_s</div>
-                    <div className="more__gray time__before">16분전</div>
-                  </div>
-                </div>
-                <div className="profile">
-                  <div className="image">
-                    <img
-                      className="right__story__img"
-                      src="/images/jangmoonjung/story__profile_02.jpg"
-                      alt="right__profile__img"
-                    />
-                  </div>
-                  <div className="story__id">
-                    <div className="id">drink_eat_drink</div>
-                    <div className="more__gray time__before">3시간 전</div>
-                  </div>
-                </div>
-                <div className="profile">
-                  <div className="image">
-                    <img
-                      className="right__story__img"
-                      src="/images/jangmoonjung/story__profile_03.jpg"
-                      alt="right__profile__img"
-                    />
-                  </div>
-                  <div className="story__id">
-                    <div className="id">hyukyc</div>
-                    <div className="more__gray time__before">20시간 전</div>
-                  </div>
-                </div>
-                <div className="profile">
-                  <div className="image">
-                    <img
-                      className="right__story__img"
-                      src="/images/jangmoonjung/story__profile_04.jpg"
-                      alt="right__profile__img"
-                    />
-                  </div>
-                  <div className="story__id">
-                    <div className="id">jminkeek</div>
-                    <div className="more__gray time__before">26시간전</div>
-                  </div>
-                </div>
+                  );
+                })}
               </div>
               <div className="recommendation">
                 <div className="title">
                   <div className="more__gray">회원님을 위한 추천</div>
                   <div className="right__more">모두 보기</div>
                 </div>
-                <div className="profile">
-                  <div className="left">
-                    <div className="image">
-                      <img
-                        className="img"
-                        src="/images/jangmoonjung/recommendation__profile_01.jpg"
-                        alt="right__profile__img"
-                      />
-                    </div>
-                    <div className="right__recommendation__id">
-                      <div className="id">joaaaaaaahye</div>
-                      <div className="more__gray">_legend_a님 외 2명이...</div>
-                    </div>
-                  </div>
-                  <div className="right__follow">팔로우</div>
-                </div>
-                <div className="profile">
-                  <div className="left">
-                    <div className="image">
-                      <img
-                        className="img"
-                        src="/images/jangmoonjung/recommendation__profile_02.jpg"
-                        alt="right__profile__img"
-                      />
-                    </div>
-                    <div className="right__recommendation__id">
-                      <div className="id">rampart81</div>
-                      <div className="more__gray">
-                        ringo,in,seoul님 외 12명...
-                      </div>
-                    </div>
-                  </div>
-                  <div className="right__follow">팔로우</div>
-                </div>
-                <div className="profile">
-                  <div className="left">
-                    <div className="image">
-                      <img
-                        className="img"
-                        src="/images/jangmoonjung/recommendation__profile_03.jpg"
-                        alt="right__profile__img"
-                      />
-                    </div>
-                    <div className="right__recommendation__id">
-                      <div className="id">shawnjjoo</div>
-                      <div className="more__gray">jimmylee1220님 외 1...</div>
-                    </div>
-                  </div>
-                  <div className="right__follow">팔로우</div>
-                </div>
+                {recommendationProfileList.map(recommendationProfile => {
+                  return (
+                    <RecommendationProfile
+                      key={recommendationProfile.id}
+                      recommendationProfile={recommendationProfile}
+                    />
+                  );
+                })}
               </div>
             </div>
             <footer className="footer">

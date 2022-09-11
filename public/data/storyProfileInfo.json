@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "storyImg": "/images/jangmoonjung/story__profile_01.jpg",
+    "storyId": "_yum_s",
+    "storyTime": "16분 전"
+  },
+  {
+    "id": 2,
+    "storyImg": "/images/jangmoonjung/story__profile_02.jpg",
+    "storyId": "drink_eat_drink",
+    "storyTime": "3시간 전"
+  },
+  {
+    "id": 3,
+    "storyImg": "/images/jangmoonjung/story__profile_03.jpg",
+    "storyId": "hyukyc",
+    "storyTime": "20시간 전"
+  },
+  {
+    "id": 4,
+    "storyImg": "/images/jangmoonjung/story__profile_04.jpg",
+    "storyId": "jminkeek",
+    "storyTime": "26시간 전"
+  }
+]
