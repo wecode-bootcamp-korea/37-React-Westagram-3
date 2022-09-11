@@ -1,5 +1,6 @@
 import React from 'react';
 import RightFooter from './RightFooter/RightFooter';
+import '../MainRight/MainRight.scss';
 
 function MainRight({ userFeedInfo }) {
   return (

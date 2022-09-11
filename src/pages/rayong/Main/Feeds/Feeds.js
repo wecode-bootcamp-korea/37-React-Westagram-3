@@ -3,6 +3,7 @@ import FeedsProfile from './FeedsProfile/FeedsProfile';
 import FeedsImg from './FeedsImg/FeedsImg';
 import FeedsCommentList from './FeedsCommentList/FeedsCommentList';
 import FeedsCommentInput from './FeedsCommentInput/FeedsCommentInput';
+import '../Feeds/Feeds.scss';
 
 function Feeds({ feedInfo }) {
   const [commentsValue, setCommentsValue] = useState('');
