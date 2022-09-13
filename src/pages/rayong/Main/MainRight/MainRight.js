@@ -30,7 +30,7 @@ function MainRight({ userFeedInfo }) {
             {userFeedInfo.map(feedInfo => {
               return (
                 <li key={feedInfo.userId}>
-                  <img className="profile" src={feedInfo.profileImg} alt="" />
+                  <img className="profile" src={feedInfo.userImg} alt="" />
                   <p>
                     <strong>{feedInfo.userName}</strong>
                     <br />
@@ -55,7 +55,7 @@ function MainRight({ userFeedInfo }) {
               return (
                 <li key={feedInfo.userId}>
                   <div>
-                    <img className="profile" src={feedInfo.profileImg} alt="" />
+                    <img className="profile" src={feedInfo.userImg} alt="" />
                     <p>
                       <strong>{feedInfo.userName}</strong>
                       <br />
