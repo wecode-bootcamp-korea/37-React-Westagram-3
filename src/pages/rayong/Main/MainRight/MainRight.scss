@@ -121,3 +121,9 @@
     }
   }
 }
+
+@media (max-width: 600px) {
+  .mainRight {
+    display: none;
+  }
+}

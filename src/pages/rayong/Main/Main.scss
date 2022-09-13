@@ -80,3 +80,13 @@
     // Feeds, MainRight 컴포넌트 scss 파일 분리
   }
 }
+
+@media (max-width: 600px) {
+  .main .contentsBox .feedsWrapper {
+    margin-right: 0px;
+  }
+
+  .inputBox {
+    display: none;
+  }
+}
