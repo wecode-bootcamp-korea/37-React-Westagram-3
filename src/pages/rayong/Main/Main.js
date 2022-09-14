@@ -15,7 +15,7 @@ function MainRa() {
 
   return (
     <main className="main">
-      <Nav />
+      <Nav userFeedInfo={userFeedInfo} />
       <div className="wrapper">
         <div className="contentsBox">
           <div className="feedsWrapper">

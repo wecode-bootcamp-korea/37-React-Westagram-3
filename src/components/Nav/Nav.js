@@ -1,7 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
+import SearchBox from './SearchBox/SearchBox';
 import './../Nav/Nav.scss';
 
-function Nav() {
+function Nav({ userFeedInfo }) {
+  // console.log(userFeedInfo);
+  // const [userName, setUserName] = useState('');
+  const [userInput, setUserInput] = useState('');
+
+  const sortedUserName = userFeedInfo.filter(userInfo => {
+    return userInfo.userName.includes(userInput);
+  });
+
+  // console.log(sortedUserName);
+
+  const handleInput = e => {
+    document.querySelector('#inputBoxIcon').className = 'display-none';
+    setUserInput(e.target.value);
+  };
   return (
     <nav className="nav">
       <div className="wrapper">
@@ -15,8 +30,16 @@ function Nav() {
             <p>Westagram</p>
           </div>
           <div className="inputBox">
-            <input id="search-inputbox" type="text" placeholder="검색" />
-            <i className="fa-solid fa-magnifying-glass" />
+            <input
+              id="searchInputbox"
+              type="text"
+              placeholder="검색"
+              onChange={handleInput}
+            />
+            <i id="inputBoxIcon" className="fa-solid fa-magnifying-glass" />
+            {sortedUserName.length === 1 ? (
+              <SearchBox sortedUserName={sortedUserName} />
+            ) : null}
           </div>
           <div className="iconBox">
             <i className="fa-regular fa-compass fa-xl" />
