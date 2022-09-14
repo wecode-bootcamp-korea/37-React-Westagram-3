@@ -1,0 +1,92 @@
+@import '../../../styles/variables.scss';
+
+.main {
+  background-color: #efefef;
+
+  .wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 10px;
+  }
+
+  .icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .nav {
+    background-color: white;
+
+    .wrapper {
+      padding: 30px 10px 20px;
+    }
+
+    .navBox {
+      @include flexSort(space-between, center);
+
+      .logoBox {
+        @include flexSort('', center);
+      }
+
+      .logoBox p {
+        font-family: 'Lobster', cursive;
+        font-size: 28px;
+        margin-left: 10px;
+
+        &::before {
+          content: '  ';
+          display: inline-block;
+          width: 1px;
+          height: 20px;
+          background-color: #333;
+          margin-right: 10px;
+        }
+      }
+
+      .inputBox {
+        position: relative;
+
+        i {
+          position: absolute;
+          opacity: 0.2;
+          left: 71px;
+          top: 6.5px;
+        }
+
+        input {
+          width: 200px;
+          text-align: center;
+          padding: 5px;
+          border: 1px solid #aaa;
+          border-radius: 3px;
+        }
+      }
+
+      .iconBox i {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .contentsBox {
+    display: flex;
+    padding: 60px 0;
+
+    .feedsWrapper {
+      flex: 2;
+      margin-right: 25px;
+    }
+
+    // Feeds, MainRight 컴포넌트 scss 파일 분리
+  }
+}
+
+@media (max-width: 600px) {
+  .main .contentsBox .feedsWrapper {
+    margin-right: 0px;
+  }
+
+  .inputBox {
+    display: none;
+  }
+}

@@ -1,41 +1,60 @@
-nav {
-  height: 40px;
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 20px;
+.nav {
+  background-color: white;
 
-  .navLeft {
-    display: flex;
-    gap: 20px;
-
-    .instargram {
-      width: 40px;
-    }
-
-    .logo {
-      display: flex;
-      font-family: 'Lobster', cursive;
-      font-size: 30px;
-    }
+  .display-none {
+    display: none;
   }
 
-  .navRight {
+  .wrapper {
+    padding: 30px 10px 20px;
+  }
+
+  .nav-box {
     display: flex;
     justify-content: space-between;
-    width: 220px;
+    align-items: center;
 
-    .profileImage {
-      border-radius: 50%;
+    .logo-box {
+      display: flex;
+      align-items: center;
     }
-  }
 
-  .search {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    width: 400px;
-    background-color: #fafafa;
-    border: 2px solid lightgray;
-    height: 35px;
+    .logo-box p {
+      font-family: 'Lobster', cursive;
+      font-size: 28px;
+      margin-left: 10px;
+
+      &::before {
+        content: '  ';
+        display: inline-block;
+        width: 1px;
+        height: 20px;
+        background-color: #333;
+        margin-right: 10px;
+      }
+    }
+
+    .input-box {
+      position: relative;
+
+      i {
+        position: absolute;
+        opacity: 0.2;
+        left: 71px;
+        top: 6.5px;
+      }
+
+      input {
+        width: 200px;
+        text-align: center;
+        padding: 5px;
+        border: 1px solid #aaa;
+        border-radius: 3px;
+      }
+    }
+
+    .icon-box i {
+      margin-left: 10px;
+    }
   }
 }

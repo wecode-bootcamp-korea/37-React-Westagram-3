@@ -1,0 +1,17 @@
+.SearchBox {
+  .boxWrap {
+    position: absolute;
+    z-index: 1;
+    width: 212px;
+    padding: px;
+    border: 1px solid gray;
+
+    .searchList {
+      padding: 10px;
+      border-bottom: 0.5px solid #bbb;
+      text-align: center;
+      color: #222;
+      background: white;
+    }
+  }
+}

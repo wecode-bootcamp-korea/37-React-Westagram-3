@@ -1,0 +1,20 @@
+[
+  {
+    "userId": 1,
+    "userName": "black_we",
+    "userImg": "https://velog.velcdn.com/images/rayong/post/5bff435f-1223-49fa-a4c2-1b6e5dca0264/image.jpg",
+    "beforeTime": "1시간 전"
+  },
+  {
+    "userId": 2,
+    "userName": "yellow_wecode",
+    "userImg": "https://velog.velcdn.com/images/rayong/post/070df743-5cfa-4117-b1dc-12c4fed2ab36/image.jpg",
+    "beforeTime": "5시간 전"
+  },
+  {
+    "userId": 3,
+    "userName": "green_wecode_for",
+    "userImg": "https://velog.velcdn.com/images/rayong/post/5ae73248-a14e-4c92-a918-46c58937a34b/image.jpg",
+    "beforeTime": "12시간 전"
+  }
+]
